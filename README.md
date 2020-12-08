@@ -6,6 +6,7 @@
     - [v-bind Directive](#v-bind-directive)
   - [Methods](#methods)
   - [Scope](#scope)
+  - [Rendering HTML](#rendering-html)
 
 ## Data Binding
 
@@ -60,3 +61,20 @@ const app = Vue.createApp({
 - Variables declared inside `data` cannot be accsed from function directly
 - We are required to use this operator
 - Vue takes all varables inside `data` and methods inside `method` and merge them in a single class, thats why we can use this operator
+
+## Rendering HTML
+
+- By default we cant render a something like this
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      courseGoal: '<h1>Finish the Course</h1>',
+    };
+  },
+```
+
+- Below code will be interpreted as string only
+- This is done by `v-bind`
+- **Must** be **avoided**, can cause security issues
