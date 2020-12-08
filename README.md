@@ -35,6 +35,7 @@ const app = Vue.createApp({
 
 - Actions when an event is executed
 - `method` is a reserved name
+- They are accessed as `<p>{{ outputGoal() }}</p>`
 
 ```js
 const app = Vue.createApp({
@@ -44,7 +45,11 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    // Your methods
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) return 'Learn Vue';
+      else return 'Master Vue';
+    },
   },
 });
 
