@@ -5,6 +5,7 @@
     - [Interpolation](#interpolation)
     - [v-bind Directive](#v-bind-directive)
   - [Methods](#methods)
+  - [Scope](#scope)
 
 ## Data Binding
 
@@ -52,6 +53,10 @@ const app = Vue.createApp({
     },
   },
 });
-
 ```
 
+## Scope
+
+- Variables declared inside `data` cannot be accsed from function directly
+- We are required to use this operator
+- Vue takes all varables inside `data` and methods inside `method` and merge them in a single class, thats why we can use this operator
